@@ -25,6 +25,13 @@ describe "NYC Pigeon Organizer" do
       }
       @result = nyc_pigeon_organizer(pigeon_data)
     end
+#my code starts helper_method
+
+
+
+
+
+
 
     context "Overview: Data Type and Attributes of Return Value" do
       it "returns a hash" do
