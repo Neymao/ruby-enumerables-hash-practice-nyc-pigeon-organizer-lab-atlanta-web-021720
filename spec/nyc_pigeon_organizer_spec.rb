@@ -25,6 +25,33 @@ describe "NYC Pigeon Organizer" do
       }
       @result = nyc_pigeon_organizer(pigeon_data)
     end
+#my code starts helper_method
+
+organized_pigeon_data = {}
+
+pigeon_data.each do |property, value_hash|
+  value_hash.each do |value, birds|
+    birds.each do |name|
+      # organized_pigeon_data[name] ||= {}
+      # organized_pigeon_data[name][property] ||= []
+      # organized_pigeon_data[name][property] << value.to_s
+      
+      if organized_pigeon_data[name]
+        if organized_pigeon_data[name][property]
+          organized_pigeon_data[name][property] << value
+        else
+          organized_pigeon_data[name][property] = [value]
+        end
+      else
+        organized_pigeon_data[name] = {property => [value]}
+      end
+    end
+  end
+end
+
+
+
+
 
     context "Overview: Data Type and Attributes of Return Value" do
       it "returns a hash" do
